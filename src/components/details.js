@@ -11,10 +11,10 @@ const mapStateToProps = state => ({
 
     const Detail =({Name,age,Email,Phone})=>(
     <h3>         
-    NAME: {Name}  <br/>
-    Age :{age}<br/>
+    Name: {Name}  <br/>
+    Age: {age}<br/>
     E-mail: {Email}<br/>
-    Phone :{Phone}<br/>
+    Phone: {Phone}<br/>
     </h3>
 )
 
