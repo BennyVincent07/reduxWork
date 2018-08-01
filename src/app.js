@@ -2,9 +2,13 @@ import React from "react";
 import { connect } from "react-redux";
 import { form } from "./actions";
 import Detail from './components/details';
-let  arr=[];
+let  arr={firstname:"",
+lastname:"",
+age:0,
+email:"",
+phone:0};
 let val;
-let disp=0;
+
 const mapStateToProps = state => ({
   isSubmitted: state.forms.isSubmitted
 });
@@ -20,36 +24,24 @@ class example extends React.Component {
     this.state = {
       value: " "
     };
-    //console.log(this.props.productId)
-    // Sets the initial state.
   }
 
   handleInputChange(parameter,e) {
     
      val=e.target.value
-     if(parameter==="firstname")
-     {
-     arr[0]=val;
-     }
-     if(parameter==="lastname")
-     {
-     arr[1]=val;
-     }
-     if(parameter==="Age")
-     {
-     arr[2]=val;
-     }
-     if(parameter==="Email")
-     {
-     arr[3]=val;
-     }
-     if(parameter==="phone:no")
-     {
-     arr[4]=val;
-     }
-    
-      disp=1;
-   
+    switch(e.target.name)
+    {
+      case 'fname': arr.firstname=val
+                    break;
+      case 'sname': arr.lastname=val
+                    break;
+      case 'age':   arr.age=val
+                    break;
+      case 'email': arr.email=val;
+                    break;
+      case 'phone': arr.phone=val;
+                   break;
+    }   
   }
 
   render() {
@@ -57,15 +49,15 @@ class example extends React.Component {
      
       <div >
         <form > Enter Details<br/><br/>
-  	 		<input type="text" placeholder="first name" onBlur={this.handleInputChange.bind(this,"firstname")}/>
+  	 		<input type="text" placeholder="first name" name="fname" onBlur={this.handleInputChange.bind(this,"firstname")}/>
          <br/>
-         <input type="text" placeholder="Second name" onBlur={this.handleInputChange.bind(this,"lastname")}/>
+         <input type="text" placeholder="Second name" name="sname" onBlur={this.handleInputChange.bind(this,"lastname")}/>
   	 <br/>
-     <input type="number" placeholder="Age" onBlur={this.handleInputChange.bind(this,"Age")}/>
+     <input type="number" placeholder="Age" name="age" onBlur={this.handleInputChange.bind(this,"Age")}/>
          <br/>
-     <input type="text" placeholder="E-mail" onBlur={this.handleInputChange.bind(this,"Email")}/>
+     <input type="text" placeholder="E-mail" email ="email" onBlur={this.handleInputChange.bind(this,"Email")}/>
          <br/>
-         <input type="number" placeholder="phone:No" onBlur={this.handleInputChange.bind(this,"phone:no")}/>
+         <input type="number" placeholder="phone:No" name="phone" onBlur={this.handleInputChange.bind(this,"phone:no")}/>
          <br/>
         
      <br/><input type="button" onClick={this.props.form} value="Submit form"/>
