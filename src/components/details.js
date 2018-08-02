@@ -2,21 +2,23 @@ import React from "react";
 import { connect } from "react-redux";
 
 const mapStateToProps = state => ({
-    Name: state.forms.fName,
+    name: state.forms.name,
     age:state.forms.age,
-    Email:state.forms.email,
-    Phone:state.forms.phone,
+    email:state.forms.email,
+    phone:state.forms.phone,
   });
-
-
-    const Detail =({Name,age,Email,Phone})=>(
+ 
+const Detail =({name,age,email,phone})=>{
+  
+  return(
     <h3> 
-      <br/>        
-    NAME: {Name}  <br/>
+    <br/>        
+    NAME: {name}  <br/>
     Age :{age}<br/>
-    E-mail: {Email}<br/>
-    Phone: {Phone}<br/>
-    </h3>
-)
-
+    E-mail: {email}<br/>
+    Phone :{phone}<br/>
+   </h3>
+  )
+   
+}
 export default connect(mapStateToProps)(Detail);

@@ -1,8 +1,8 @@
-eexport const form = (val) => ({
+export const form = (inputData) => ({
   type: 'form',
-  fName: val.firstname,
-  sName: val.lastname,
-  age: val.age,
-  email: val.email,
-  phone: val.phone
+  firstName: inputData.firstname,
+  secondName: inputData.lastname,
+  age:   inputData.age,
+  email: inputData.email,
+  phone: inputData.phone
 });
