@@ -15,7 +15,7 @@ const mapStateToProps = state => ({
     NAME: {Name}  <br/>
     Age :{age}<br/>
     E-mail: {Email}<br/>
-    Phone :{Phone}<br/>
+    Phone: {Phone}<br/>
     </h3>
 )
 

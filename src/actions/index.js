@@ -1,4 +1,4 @@
-export const form = (val) => ({
+eexport const form = (val) => ({
   type: 'form',
   fName: val.firstname,
   sName: val.lastname,
