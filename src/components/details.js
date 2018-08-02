@@ -6,19 +6,19 @@ const mapStateToProps = state => ({
     age:state.forms.age,
     email:state.forms.email,
     phone:state.forms.phone,
-  });
+});
  
 const Detail =({name,age,email,phone})=>{
   
-  return(
-    <h3> 
-    <br/>        
+    return(
+        <h3> 
+            <br/>        
     NAME: {name}  <br/>
     Age :{age}<br/>
     E-mail: {email}<br/>
     Phone :{phone}<br/>
-   </h3>
-  )
+        </h3>
+    );
    
-}
+};
 export default connect(mapStateToProps)(Detail);
