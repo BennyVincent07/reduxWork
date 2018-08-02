@@ -1,8 +1,8 @@
 export const form = (val) => ({
   type: 'form',
-  fName: val[0],
-  sName: val[1],
-  age:val[2],
-  email: val[3],
-  phone: val[4]
+  fName: val.firstname,
+  sName: val.lastname,
+  age: val.age,
+  email: val.email,
+  phone: val.phone
 });
